@@ -2,18 +2,18 @@ create database if not exists products;
 use products;
 create table if not exists product(
 id int primary key auto_increment,
-product_code varchar(25),
-product_name varchar(25),
+product_code varchar(50),
+product_name varchar(50),
 product_price double,
 product_amount int,
-product_description varchar(25),
+product_description varchar(50),
 product_status bit
 );
 
-INSERT INTO `products`.`product` (`product_code`, `product_name`, `product_price`, `product_amount`, `product_description`, `product_status`) VALUES ('a1', 'sua', '100', '3', 'tuoi', b'1');
-INSERT INTO `products`.`product` (`product_code`, `product_name`, `product_price`, `product_amount`, `product_description`, `product_status`) VALUES ('a2', 'banh mi', '200', '4', 'cha', b'0');
-INSERT INTO `products`.`product` (`product_code`, `product_name`, `product_price`, `product_amount`, `product_description`, `product_status`) VALUES ('b1', 'banh trang tron', '50', '2', 'bo kho', b'1');
-select * from product where product_code = "a2";
+INSERT INTO products.product (product_code, product_name, product_price, product_amount, product_description, product_status) VALUES ('a1', 'sua', 100, 3, 'tuoi', b'1');
+INSERT INTO products.product (product_code, product_name, product_price, product_amount, product_description, product_status) VALUES ('a2', 'banh mi', 200, 4, 'cha', b'0');
+INSERT INTO products.product (product_code, product_name, product_price, product_amount, product_description, product_status) VALUES ('b1', 'banh trang tron', 50, 2, 'bo kho', b'1');
+select * from product where product_code = 'a2';
 
 
 create index product_code_index
@@ -36,7 +36,7 @@ select * from product_view;
 
 
 set sql_safe_updates = 0;
-update product_view set product_name = "sua bo" where product_code = "a1";
+update product_view set product_name = 'sua bo' where product_code = 'a1';
 
 
 drop view product_view;
@@ -54,20 +54,20 @@ call thong_tin_all_product();
 
 
 delimiter //
-create procedure add_product (`product_code` varchar(25), `product_name` varchar(25), `product_price`double, `product_amount` int, `product_description` varchar(25), `product_status` bit)
+create procedure add_product (product_code varchar(50), product_name varchar(50), product_price double, product_amount int,product_description varchar(50), product_status bit)
 begin 
-insert into `products`.`product` (`product_code`, `product_name`, `product_price`, `product_amount`, `product_description`, `product_status`) 
-values (`product_code`, `product_name`, `product_price`, `product_amount`, `product_description`, `product_status`);
+insert into products.product (product_code, product_name, product_price, product_amount, product_description, product_status) 
+values (product_code, product_name, product_price, product_amount, product_description, product_status);
 end
 // delimiter ;
 
 
-call add_product("b3", "nem chua ran", 75, 3, "ha noi", 0);
+call add_product('b3', 'nem chua ran', 75, 3, 'ha noi', 0);
 call thong_tin_all_product();
 
 
 delimiter //
-create procedure update_theo_id (id_edit int, `product_code_edit` varchar(25), `product_name_edit` varchar(25), `product_price_edit`double, `product_amount_edit` int, `product_description_edit` varchar(25), `product_status_edit` bit)
+create procedure update_theo_id (id_edit int, product_code_edit varchar(25), product_name_edit varchar(25), product_price_edit double, product_amount_edit int, product_description_edit varchar(25), product_status_edit bit)
 begin
 update product set 
     product_code = product_code_edit,
@@ -80,7 +80,7 @@ update product set
 end
 // delimiter ;
 
-call update_theo_id (2, "a6", "banh mi sua", 300, 1, "sua ong tho", 1);
+call update_theo_id (2, 'a6', 'banh mi sua', 300, 1, 'sua ong tho', 1);
 call thong_tin_all_product();
 
 
