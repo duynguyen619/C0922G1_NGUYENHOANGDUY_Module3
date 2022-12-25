@@ -30,7 +30,7 @@ where substring_index(`name`, " ", -1) like 'H%'
   -- (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
   
   select customer.id,customer.`name`, customer_type.`name`, contract.id, facility.`name`, contract.start_date,contract.end_date, sum((facility.depost + ifnull((attach_facility.unit * contract_detall.cost), 0))) as total
-  from khach_hang
+  from customer
   left join customer_type on customer.id = customer_type.id
   left join contract on customer.id = contract.id
   left join customer on contract.id = facility.id
