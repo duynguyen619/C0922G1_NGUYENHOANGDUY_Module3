@@ -1,5 +1,5 @@
-create database product_class;
-use product_class;
+create database products_class;
+use products_class;
 
 create table customers(
 cid int auto_increment primary key,
@@ -56,4 +56,29 @@ insert into orderdetail(oid,pid,odqty) values
 (2,5,4),
 (2,3,3);
 
-set SQL_SAFE_UPDATE=0
+set SQL_SAFE_UPDATE=0;
+
+select orders.oid, date_format(`order`.odate, "%m/%d/%Y") as odate, ototalprice
+from orders 
+join orderdetail on orderdetail.oid = `order`.oid
+join product on orderdetail.pid = product.pid
+group by oid
+;
+
+select * from customer
+join `order` on `order`.cid = customer.cid
+order by  customer.cid
+;
+
+select * from customers
+left join orders on orders.cid = customer.cid
+group by orders.cid having count(orders.cid) = 0
+;
+
+select orders.oid, date_format(orders.odate, "%m/%d/%Y") as odate, 
+sum((product.pprice) * (orderdetail.orderdetail_qty)) as oprice
+from orders 
+join orderdetail on orderdetail.oid = orders.oid
+join product on orderdetail.pid = product.pid
+group by oid
+;

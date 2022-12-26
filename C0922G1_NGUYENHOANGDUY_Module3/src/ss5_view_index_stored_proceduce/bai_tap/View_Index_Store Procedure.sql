@@ -10,8 +10,8 @@ product_description varchar(50),
 product_status bit
 );
 
-INSERT INTO products.product (product_code, product_name, product_price, product_amount, product_description, product_status) VALUES ('a1', 'sua', 100, 3, 'tuoi', b'1');
-INSERT INTO products.product (product_code, product_name, product_price, product_amount, product_description, product_status) VALUES ('a2', 'banh mi', 200, 4, 'cha', b'0');
+INSERT INTO products.product (product_code, product_name, product_price,product_amount, product_description, product_status) VALUES ('a1', 'sua', 100, 3, 'tuoi', b'1');
+INSERT INTO products.product (product_code, product_name,product_price, product_amount, product_description, product_status) VALUES ('a2', 'banh mi', 200, 4, 'cha', b'0');
 INSERT INTO products.product (product_code, product_name, product_price, product_amount, product_description, product_status) VALUES ('b1', 'banh trang tron', 50, 2, 'bo kho', b'1');
 select * from product where product_code = 'a2';
 
@@ -54,11 +54,11 @@ call thong_tin_all_product();
 
 
 delimiter //
-create procedure add_product (product_code varchar(50), product_name varchar(50), product_price double, product_amount int,product_description varchar(50), product_status bit)
+create procedure add_product (product_code varchar(25), product_name varchar(25), product_price double, product_amount int, product_description varchar(25), product_status bit)
 begin 
 insert into products.product (product_code, product_name, product_price, product_amount, product_description, product_status) 
 values (product_code, product_name, product_price, product_amount, product_description, product_status);
-end
+end 
 // delimiter ;
 
 
