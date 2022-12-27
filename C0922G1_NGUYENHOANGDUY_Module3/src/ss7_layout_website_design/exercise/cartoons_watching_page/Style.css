@@ -1,64 +1,172 @@
-head, footer{
+body {
+    font-family: Arial, serif;
+}
+
+head, footer {
     padding: 10px;
     background-color: #e0dada;
 }
-ul{
+
+ul {
     text-align: center;
 }
-li{
+
+li {
     display: inline;
     margin: 5px;
     padding-right: 15px;
 }
-section{
+
+.body {
+    background-color: lightblue;
+    display: flex;
+}
+
+section {
     width: 35px;
     margin: 30px;
     overflow: hidden;
     height: 800px;
 }
-section:hover{
-    overflow: scroll;
-}
-aside{
-    width:65%;
+
+aside {
+    width: 65%;
     margin: 30px;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
-aside img{
+
+section img {
     width: 100%;
     height: 100%;
 }
-aside p{
+
+article {
+    margin-bottom: 30px;
+}
+
+aside p {
     text-align: justify;
 }
-footer{
+
+footer {
     text-align: center;
 }
-#fix{
-    height: 55px;
-    position: fixed;
-    border:solid crimson;
-    margin: 5px;
-}
-header{
+
+header {
     height: 55px;
 }
-h3{
+
+h3 {
     margin-top: 0;
     border: solid crimson;
     padding: 5px;
     background-color: #e4e8ee;
 }
-header p{
+
+header p {
     text-align: center;
     margin-top: 10px;
 }
-span{
+
+span {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
 }
+.container{
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    background-color: #80cbc4;
+    padding: 10px;
+    border-radius: 10px;
+}
+.item {
+    background-color: #80cbc4;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+@media only screen and (max-width:740px ){
+    .col-s-1 {width: 8.33333%;}
+    .col-s-2 {width: 16.66667%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33333%;}
+    .col-s-5 {width: 41.66667%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33333%;}
+    .col-s-8 {width: 66.66667%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33333%;}
+    .col-s-11 {width: 91.66667%;}
+    .col-s-12 {width: 100%;}
+    /*tăng kích thước font cho dễ đọc*/
+}
+/*Màn hinh laptop và máy tính bảng*/
+@media only screen and (min-width:741px)and (max-width:1240px){
+    .col-m-1 {width: 8.33333%;}
+    .col-m-2 {width: 16.66667%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33333%;}
+    .col-m-5 {width: 41.66667%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33333%;}
+    .col-m-8 {width: 66.66667%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33333%;}
+    .col-m-11 {width: 91.66667%;}
+    .col-m-12 {width: 100%;}
+}
+/*Màn hình máy tính pc và tivi smart*/
+@media only screen and (min-width:1241px){
+    .col-l-1 {width: 8.33333%;}
+    .col-l-2 {width: 16.66667%;}
+    .col-l-3 {width: 25%;}
+    .col-l-4 {width: 33.33333%;}
+    .col-l-5 {width: 41.66667%;}
+    .col-l-6 {width: 50%;}
+    .col-l-7 {width: 58.33333%;}
+    .col-l-8 {width: 66.66667%;}
+    .col-l-9 {width: 75%;}
+    .col-l-10 {width: 83.33333%;}
+    .col-l-11 {width: 91.66667%;}
+    .col-l-12 {width: 100%;}
+}
+@media only screen and (max-width:719px ){
+    .col-xs-1 {width: 8.33333%;}
+    .col-xs-2 {width: 16.66667%;}
+    .col-xs-3 {width: 25%;}
+    .col-xs-4 {width: 33.33333%;}
+    .col-xs-5 {width: 41.66667%;}
+    .col-xs-6 {width: 50%;}
+    .col-xs-7 {width: 58.33333%;}
+    .col-xs-8 {width: 66.66667%;}
+    .col-xs-9 {width: 75%;}
+    .col-xs-10 {width: 83.33333%;}
+    .col-xs-11 {width: 91.66667%;}
+    .col-xs-12 {width: 100%;}
+    #left-content{
+        visibility: hidden;
+    }
+}
+@media only screen and (min-width:1080px)and (max-width:1920px) {
+    .col-md-1 {width: 8.33333%;}
+    .col-md-2 {width: 16.66667%;}
+    .col-md-3 {width: 25%;}
+    .col-md-4 {width: 33.33333%;}
+    .col-md-5 {width: 41.66667%;}
+    .col-md-6 {width: 50%;}
+    .col-md-7 {width: 58.33333%;}
+    .col-md-8 {width: 66.66667%;}
+    .col-md-9 {width: 75%;}
+    .col-md-10 {width: 83.33333%;}
+    .col-md-11 {width: 91.66667%;}
+    .col-md-12 {width: 100%;}
+}
+
+
+
