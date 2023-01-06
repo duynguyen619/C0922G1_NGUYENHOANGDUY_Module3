@@ -1,6 +1,6 @@
 package repository.impl;
 
-import Model.Product;
+import model.Product;
 import repository.IProductRepository;
 
 import java.util.ArrayList;

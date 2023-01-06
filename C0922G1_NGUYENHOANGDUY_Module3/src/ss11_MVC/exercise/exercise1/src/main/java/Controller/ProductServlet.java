@@ -1,8 +1,8 @@
-package Controller;
+package controller;
 
-import Model.Product;
+import model.Product;
 import service.impl.ProductService;
-import service.IProduct;
+
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -84,6 +84,7 @@ public class ProductServlet extends HttpServlet {
         Product product=new Product(id,name,price,describe,producer);
         boolean check = productService.save(product);
         String mess = "Thêm thành công";
+
         if (!check) {
             mess = "Thêm mới thành công";
         }
