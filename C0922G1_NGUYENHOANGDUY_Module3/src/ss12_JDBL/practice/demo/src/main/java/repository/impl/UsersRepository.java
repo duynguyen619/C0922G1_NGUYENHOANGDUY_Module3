@@ -75,7 +75,6 @@ public class UsersRepository implements IUsersRepository {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_COUNTRY);
             preparedStatement.setString(1,"%"+ country +"%");
-            System.out.println(preparedStatement);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {

@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "UsersServlet", value = "/users")
+@WebServlet(name = "UsersServlet", value = "/user")
 public class UsersServlet extends HttpServlet {
     IUsersService usersService = new UsersService();
 
@@ -50,16 +50,16 @@ public class UsersServlet extends HttpServlet {
 
     private void searchUsers(HttpServletRequest request, HttpServletResponse response) {
         String country = request.getParameter("country");
-        List<Users> userList = this.usersService.selectUserByCountry(country);
+        List<Users> userList = usersService.selectUserByCountry(country);
         request.setAttribute("userList", userList);
-        request.setAttribute("countrySave", country);
         try {
-            request.getRequestDispatcher("user/search.jsp").forward(request, response);
+            request.getRequestDispatcher("view/list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        showlist(request,response);
     }
 
     private void editUsers(HttpServletRequest request, HttpServletResponse response) {
@@ -70,7 +70,7 @@ public class UsersServlet extends HttpServlet {
         Users users = new Users(id, name, email, country);
         usersService.updateUser(users);
         try {
-            request.getRequestDispatcher("/user/edit.jsp").forward(request, response);
+            request.getRequestDispatcher("view/edit.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -113,7 +113,7 @@ public class UsersServlet extends HttpServlet {
         Users users = usersService.selectUserById(id);
         request.setAttribute("user", users);
         try {
-            request.getRequestDispatcher("user/delete.jsp").forward(request, response);
+            request.getRequestDispatcher("view/delete.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -126,7 +126,7 @@ public class UsersServlet extends HttpServlet {
         Users users = usersService.selectUserById(id);
         request.setAttribute("user", users);
         try {
-            request.getRequestDispatcher("user/edit.jsp").forward(request, response);
+            request.getRequestDispatcher("view/edit.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -136,7 +136,7 @@ public class UsersServlet extends HttpServlet {
 
     private void showInsertForm(HttpServletRequest request, HttpServletResponse response) {
         try {
-            request.getRequestDispatcher("user/insert.jsp").forward(request, response);
+            request.getRequestDispatcher("view/insert.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -148,7 +148,7 @@ public class UsersServlet extends HttpServlet {
         List<Users> userList = usersService.selectAllUser();
         request.setAttribute("userList", userList);
         try {
-            request.getRequestDispatcher("user/list.jsp").forward(request, response);
+            request.getRequestDispatcher("view/list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

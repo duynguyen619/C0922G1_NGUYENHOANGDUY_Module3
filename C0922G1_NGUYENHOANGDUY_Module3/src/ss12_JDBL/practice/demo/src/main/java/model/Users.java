@@ -7,6 +7,9 @@ public class Users {
     private String country;
 
     public Users(String name, String email, String country1) {
+        this.name = name;
+        this.email = email;
+        this.country = country1;
     }
 
     public Users(int id, String name, String email, String country) {
