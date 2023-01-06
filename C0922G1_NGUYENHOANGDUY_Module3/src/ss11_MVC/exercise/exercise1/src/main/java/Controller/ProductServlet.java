@@ -3,7 +3,6 @@ package controller;
 import model.Product;
 import service.impl.ProductService;
 
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -12,7 +11,7 @@ import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/product")
 public class ProductServlet extends HttpServlet {
-    private  ProductService productService = new ProductService();
+    private ProductService productService = new ProductService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -56,7 +55,6 @@ public class ProductServlet extends HttpServlet {
         }
 
     }
-
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String action = request.getParameter("action");
