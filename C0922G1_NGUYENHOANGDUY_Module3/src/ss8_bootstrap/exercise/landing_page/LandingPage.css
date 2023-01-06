@@ -22,6 +22,9 @@
 tag{
     list-style:armenian;
 }
+a{
+    font-size: 100px;
+}
 
 /*màn hình điện thoai*/
 @media only screen and (max-width:740px ){

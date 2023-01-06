@@ -20,9 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2153a900-4019-4410-a876-286ef1007a96" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ss11_MVC/practice/practive1/src/main/java/Model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_MVC/practice/practive1/src/main/java/ProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_MVC/practice/practive1/src/main/java/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_MVC/practice/practive1/src/main/java/service/impl/IProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/dictionaries/PC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dictionaries/PC.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/case_2/Task_1.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/case_2/Task_1.1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ss8_bootstrap/exercise/landing_page/LandingPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_bootstrap/exercise/landing_page/LandingPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ss8_bootstrap/exercise/landing_page/LandingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_bootstrap/exercise/landing_page/LandingPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../thuat_toan/Bai_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../thuat_toan/Bai_1.java" afterDir="false" />
@@ -41,64 +47,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="ss10_JSTL" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="ss10_JSTL" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Duy/C0922G1_NGUYENHOANGDUY_Module3/src/ss10_JSTL&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -110,11 +68,13 @@
       <option name="presentableId" value="Default" />
       <updated>1672372712116</updated>
       <workItem from="1672372719098" duration="115000" />
+      <workItem from="1672719025784" duration="198000" />
+      <workItem from="1672721177347" duration="51000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
