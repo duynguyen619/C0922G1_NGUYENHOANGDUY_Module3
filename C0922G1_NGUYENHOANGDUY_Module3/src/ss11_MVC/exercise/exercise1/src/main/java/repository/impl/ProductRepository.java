@@ -3,12 +3,19 @@ package repository.impl;
 import Model.Product;
 import repository.IProductRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepository implements IProductRepository {
-    @Override
+    private static List<Product> productList = new ArrayList<>();
+
+    static {
+        productList.add(new Product(1, "Iphone 13 Pro Max", 200000.0, "SmartPhone", "Apple"));
+        productList.add(new Product(2, "Iphone 14 Pro Max", 3000000.0, "SmartPhone", "Apple"));
+    }
+
     public List<Product> findAll() {
-        return null;
+        return productList;
     }
 
     @Override
@@ -18,7 +25,7 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public boolean save(Product product) {
-        return false;
+        return productList.add(product);
     }
 
     @Override

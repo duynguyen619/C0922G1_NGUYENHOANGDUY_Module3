@@ -13,8 +13,6 @@ import java.util.List;
 @WebServlet(name = "ProductServlet", value = "/product")
 public class ProductServlet extends HttpServlet {
     private ProductService productService = new ProductService();
-    private Product product=new Product();
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -25,6 +23,11 @@ public class ProductServlet extends HttpServlet {
             case "create":
                 showFormCreate(request, response);
                 break;
+            case "edit":
+            case "view":
+                break;
+            case "delete":
+                break;
             default:
                 showList(request, response);
                 break;
@@ -33,7 +36,7 @@ public class ProductServlet extends HttpServlet {
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) {
         try {
-            request.getRequestDispatcher("view/product/create.jsp").forward(request, response);
+            request.getRequestDispatcher("view/create.jsp").forward(request, response);
         } catch (ServletException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -45,7 +48,7 @@ public class ProductServlet extends HttpServlet {
         List<Product> productList = productService.findAll();
         request.setAttribute("productList", productList);
         try {
-            request.getRequestDispatcher("/view/product.jsp").forward(request, response);
+            request.getRequestDispatcher("view/product.jsp").forward(request, response);
         } catch (ServletException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -61,7 +64,7 @@ public class ProductServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "create":
+            case "save":
                 save(request, response);
                 break;
             case "delete":
@@ -72,18 +75,20 @@ public class ProductServlet extends HttpServlet {
                 break;
         }
     }
-    private void save(HttpServletRequest request, HttpServletResponse response) {
+    private void save(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        String name = request.getParameter("Tên sản phẩm");
-        double price = Double.parseDouble(request.getParameter("Giá tiền"));
-        String describe = request.getParameter("Mô tả");
-        String producer = request.getParameter("Nhà sản phẩm");
+        String name = request.getParameter("name");
+        double price = Double.parseDouble(request.getParameter("price"));
+        String describe = request.getParameter("describe");
+        String producer = request.getParameter("producer");
+        Product product=new Product(id,name,price,describe,producer);
         boolean check = productService.save(product);
         String mess = "Thêm thành công";
         if (!check) {
             mess = "Thêm mới thành công";
         }
         request.setAttribute("mess", mess);
-        showFormCreate(request,response);
+        //showFormCreate(request,response);
+        response.sendRedirect("product");
     }
 }
