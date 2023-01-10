@@ -1,10 +1,6 @@
 package controller;
 
-import model.customer.Customer;
-import repositoty.ICustomerRepositoty;
-import repositoty.impl.CustomerRepository;
-import service.impl.CustomerService;
-import service.ICustomer;
+import service.impl.Employee;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,10 +8,10 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CustomerServlet", value = "/customer")
-public class CustomerServlet extends HttpServlet {
-    private ICustomer customerService = new CustomerService();
-    private ICustomerRepositoty customerRepositoty = new CustomerRepository();
+@WebServlet(name = "EmployeeServlet", value = "/Employee")
+public class EmployeeServlet extends HttpServlet {
+    private Employee employee = new Employee();
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,22 +20,21 @@ public class CustomerServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "list":
-              break;
             default:
                 showList(request, response);
+                break;
         }
     }
 
     private void showList(HttpServletRequest request, HttpServletResponse response) {
-        List<Customer> customerList= customerService.selectAllCustomer();
-        request.setAttribute("customerList", customerList);
+        List<model.employee.Employee> employeeList=employee.selectAllEmployee();
+        request.setAttribute("employeeList" ,employeeList);
         try {
-            request.getRequestDispatcher("view/customer/list.jsp").forward(request,response);
+            request.getRequestDispatcher("view/employee/list.jsp").forward(request, response);
         } catch (ServletException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
@@ -51,18 +46,17 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action) {
             case "delete":
-                deleteCustomer(request,response);
+                deleteEmployee(request, response);
                 break;
-            default:
         }
     }
 
-    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
-        int deleteId = Integer.parseInt(request.getParameter("delete"));
-        boolean check = customerService.deleteCustomer();
-        String mess = "Xóa thành công";
+    private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("deleteId"));
+        boolean check = employee.deleteEmployee(id);
+        String mess = "Deleted Successfully!";
         if (!check) {
-            mess = "Xóa không thành công";
+            mess = "Delete Failed!";
         }
         request.setAttribute("mess", mess);
         showList(request, response);

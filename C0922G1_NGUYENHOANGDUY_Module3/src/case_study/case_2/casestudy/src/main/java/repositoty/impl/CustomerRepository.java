@@ -1,10 +1,9 @@
-package repositoty.customer.impl;
+package repositoty.impl;
 
 
 import model.customer.Customer;
-import model.customer.CustomerType;
 import repositoty.BaseRepository;
-import repositoty.customer.ICustomerRepositoty;
+import repositoty.ICustomerRepositoty;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,7 +34,6 @@ public class CustomerRepository implements ICustomerRepositoty {
     public List<Customer> selectAllCustomer() {
         Connection connection= BaseRepository.getConnectDB();
         List<Customer> customerList =new ArrayList<>();
-
         try {
             PreparedStatement ps = connection.prepareStatement(SELECT_ALL_CUSTOMER);
             ResultSet rs = ps.executeQuery();

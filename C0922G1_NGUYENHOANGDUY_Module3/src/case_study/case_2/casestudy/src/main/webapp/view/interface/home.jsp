@@ -25,8 +25,8 @@
 <div class="mt-2 sticky row" style="background: #75b798 ; margin-top:  -0.5rem">
     <nav class="navbar navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand text-light ps-5 click col-md-2" href="">Home</a>
-            <a class="navbar-brand text-light click col-md-2" href="">Empolyee</a>
+            <a class="navbar-brand text-light ps-5 click col-md-2" href="/view/interface/home.jsp">Home</a>
+            <a class="navbar-brand text-light click col-md-2" href="/Employee">Empolyee</a>
             <a class="navbar-brand text-light click col-md-2" href="/customer">Customer</a>
             <a class="navbar-brand text-light click col-md-2" href="">Service</a>
             <a class="navbar-brand text-light click col-md-2" href="">Contract</a>

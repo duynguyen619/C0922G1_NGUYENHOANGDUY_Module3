@@ -1,4 +1,4 @@
-package service.customer;
+package service;
 
 import model.customer.Customer;
 

@@ -1,4 +1,4 @@
-package repositoty.customer;
+package repositoty;
 
 import model.customer.Customer;
 

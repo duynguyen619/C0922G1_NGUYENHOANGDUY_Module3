@@ -1,12 +1,13 @@
-package service.customer;
+package service.impl;
 
 import model.customer.Customer;
-import repositoty.customer.ICustomerRepositoty;
-import repositoty.customer.impl.CustomerRepository;
+import repositoty.ICustomerRepositoty;
+import repositoty.impl.CustomerRepository;
+import service.ICustomer;
 
 import java.util.List;
 
-public class CustomerService implements ICustomer{
+public class CustomerService implements ICustomer {
     ICustomerRepositoty customerRepositoty = new CustomerRepository();
     @Override
     public List<Customer> selectAllCustomer() {
