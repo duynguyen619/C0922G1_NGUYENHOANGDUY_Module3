@@ -25,15 +25,22 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action) {
             case "list":
-                showList(request, response);
+              break;
             default:
-                request.getRequestDispatcher("/view/interface/home.jsp").forward(request, response);
+                showList(request, response);
         }
     }
 
     private void showList(HttpServletRequest request, HttpServletResponse response) {
-        List<Customer> customers=customerService.selectAllCustomer();
-
+        List<Customer> customerList= customerService.selectAllCustomer();
+        request.setAttribute("customerList", customerList);
+        try {
+            request.getRequestDispatcher("view/customer/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

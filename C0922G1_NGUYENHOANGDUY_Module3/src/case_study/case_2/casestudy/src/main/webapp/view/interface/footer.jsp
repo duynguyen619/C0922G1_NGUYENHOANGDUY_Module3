@@ -2,31 +2,72 @@
   Created by IntelliJ IDEA.
   User: PC
   Date: 09/01/2023
-  Time: 10:59 SA
+  Time: 11:05 SA
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
 <html>
 <head>
-    <title>fooder</title>
+    <title>header</title>
+  <style>
+    a.navbar-brand {
+      color: white
+    }
+
+    a.navbar-link {
+      color: #FFFFFF
+    }
+
+    a.navbar-link:hover {
+      color: #CBBE73
+    }
+
+    a.navbar-brand:hover {
+      color: #75b798
+    }
+  </style>
 </head>
 <body>
-<div class="container-fluid row" style="background-color: black; margin: 0 auto">
-    <div class="col-md-3">
-        <img src="img/logo.png" height="70px" width="70px" alt=""/>
-    </div>
-    <div class="col-md-6">
-        <a href="https://furamavietnam.com/vi"
-           style="text-decoration:none; font-family: 'Felix Titling',serif;font-size: 300%;font-weight: bold;color: mediumvioletred;margin-left: 200px">
-            FURAMA RESORT</a>
-    </div>
-    <div class="col-md-3">
-        <a style="font-family: 'fantasy';font-size: 100%;font-weight: bold;margin-left: 120px; color: mediumvioletred">Duy
-            Nguyễn
-        </a> <a
-            style="font-family: 'fantasy';font-size: 100%;font-weight: bold;margin-left: 120px; color: mediumvioletred">C0922G1
+<div class="container-fluid row" style="background-color: #75b798; margin: 0 auto;">
+  <div class="col-md-3">
+    <a style="font-family: 'Times New Roman',serif;font-size: 200%;font-weight: bold">
+      <a style="font-family:'UVN Saigon',serif; font-size:120%;margin-left:50px"> Hướng Dẫn Di Chuyển</a><br>
+      Khu nghỉ dưỡng Furama là cơ sở hàng đầu để khám phá một trong những điểm đến hấp dẫn nhất Châu Á. Chỉ cách
+      Đà Nẵng một quãng lái xe ngắn là bốn Di sản Văn hóa Thế giới được UNESCO công nhận:</a><br>
+    <a style="font-family:'UVN Saigon',serif; font-size:120%;margin-left:50px">Địa điểm</a><br>
+    <ul style="font-family: 'Times New Roman',serif;font-size: 150%;text-decoration: underline;color: #615f5f">
+      <li class="list-group">Cố Đô Huế &nbsp &nbsp 2 tiếng</li>
+      <li class="list-group">Phố cổ Hội An &nbsp 30 phút</li>
+      <li class="list-group">Thánh địa Mỹ Sơn &nbsp 90 phút</li>
+      <li class="list-group">Động Phong Nha &nbsp 3 tiếng</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul style=" font-family: 'Times New Roman',serif;font-size:150%;font-weight:bold;color: #615f5f;margin-left: 200px">
+      <li class="link-item" aria-current="true">Giá Công Bố</li>
+      <li class="link-item">Lifestyle Blog</li>
+      <li class="link-item">Tuyển Dụng</li>
+      <li class="link-item">Liện Hệ</li>
+    </ul>
+  </div>
+  <div class="col-md-3">
+    <a style="font-family: 'Times New Roman',serif;font-size:100%;font-weight:bold">
+      103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam<br>
+      Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666<br>
+      Email: reservation@furamavietnam.com <br>
+      Website: www.furamavietnam.comGDS<br>
+      Codes: Amadeus-GD DADFUR, Galileo/Apollo-GD 16236, Sabre-GD 032771, Worldspan- GD DADFU
     </a>
-    </div>
+  </div>
 </div>
 </body>
 </html>

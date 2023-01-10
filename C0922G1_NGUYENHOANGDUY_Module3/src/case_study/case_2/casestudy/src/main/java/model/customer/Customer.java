@@ -4,17 +4,17 @@ public class Customer {
     private int id;
     private String name;
     private String birthDay;
-    private String gender;
+    private boolean gender;
     private String idCard;
     private int numberPhone;
     private String address;
     private String mail;
     private CustomerType customerType;
 
-    public Customer() {
+    public Customer(int id, int customerTypeId, String name, String dateOfBirth, boolean gender, String idCard, int phoneNumber, String address, String email) {
     }
 
-    public Customer(int id, String name, String birthDay, String gender, String idCard, int numberPhone, String address, String mail, CustomerType customerType) {
+    public Customer(int id, String name, String birthDay, boolean gender, String idCard, int numberPhone, String address, String mail, CustomerType customerType) {
         this.id = id;
         this.name = name;
         this.birthDay = birthDay;
@@ -50,11 +50,11 @@ public class Customer {
         this.birthDay = birthDay;
     }
 
-    public String getGender() {
+    public boolean getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(boolean gender) {
         this.gender = gender;
     }
 

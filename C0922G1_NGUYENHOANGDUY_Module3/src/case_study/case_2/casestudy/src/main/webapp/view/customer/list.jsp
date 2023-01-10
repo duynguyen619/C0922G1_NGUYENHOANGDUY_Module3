@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: PC
@@ -9,7 +10,6 @@
 <html>
 <head>
     <title>Title</title>
-    <%@include file="/view/interface/header.jsp" %>
 </head>
 <body>
 <%@include file="/view/interface/header.jsp" %>
@@ -55,13 +55,18 @@
         <c:forEach var="customer" items="${customerList}" varStatus="status">
             <tr>
                 <th scope="row"><c:out value="${status.count}"/></th>
-                <td>${customer.getName()}</td>
-                <td>${customer.getDateOfBirth()}</td>
-                <td>${customer.getGender()=='Man'?'Man':'Woman'}</td>
+                <td>${customer.name()}</td>
+                <td>${customer.birthDay()}</td>
+                <c:if test="${customer.gender}">
+                    <td>Nữ</td>
+                </c:if>
+                <c:if test="${!customer.gender}">
+                    <td>Nam</td>
+                </c:if>
                 <td>${customer.getIdCard()}</td>
-                <td>${customer.getPhoneNumber()}</td>
+                <td>${customer.numberPhone()}</td>
                 <td>${customer.getAddress()}</td>
-                <td>${customer.getEmail()}</td>
+                <td>${customer.mail()}</td>
                 <td>${customer.getCustomerType().getName()}</td>
                 <td>
                     <button onclick="infoEdit('${customer.getId()}','${customer.getName()}','${customer.getDateOfBirth()}',
@@ -79,6 +84,9 @@
         </tbody>
     </table>
 </div>
+
+
+
 <div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
