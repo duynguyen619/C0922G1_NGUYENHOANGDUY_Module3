@@ -2,28 +2,39 @@ package model.customer;
 
 public class Customer {
     private int id;
+    private String customerTypeId;
     private String name;
-    private String birthDay;
+    private String dateOfBirth;
     private boolean gender;
     private String idCard;
-    private int numberPhone;
+    private String phoneNumber;
+    private String email;
     private String address;
-    private String mail;
-    private CustomerType customerType;
 
-    public Customer(int id, int customerTypeId, String name, String dateOfBirth, boolean gender, String idCard, int phoneNumber, String address, String email) {
+    public Customer() {
     }
 
-    public Customer(int id, String name, String birthDay, boolean gender, String idCard, int numberPhone, String address, String mail, CustomerType customerType) {
+    public Customer(int id, String customerTypeId, String name, String dateOfBirth, boolean gender, String idCard, String phoneNumber, String email, String address) {
         this.id = id;
+        this.customerTypeId = customerTypeId;
         this.name = name;
-        this.birthDay = birthDay;
+        this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.idCard = idCard;
-        this.numberPhone = numberPhone;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
         this.address = address;
-        this.mail = mail;
-        this.customerType = customerType;
+    }
+
+    public Customer(String customerTypeId, String name, String dateOfBirth, boolean gender, String idCard, String phoneNumber, String email, String address) {
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
     }
 
     public int getId() {
@@ -34,6 +45,14 @@ public class Customer {
         this.id = id;
     }
 
+    public String getCustomerTypeId() {
+        return customerTypeId;
+    }
+
+    public void setCustomerTypeId(String customerTypeId) {
+        this.customerTypeId = customerTypeId;
+    }
+
     public String getName() {
         return name;
     }
@@ -42,15 +61,15 @@ public class Customer {
         this.name = name;
     }
 
-    public String getBirthDay() {
-        return birthDay;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setBirthDay(String birthDay) {
-        this.birthDay = birthDay;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public boolean getGender() {
+    public boolean isGender() {
         return gender;
     }
 
@@ -66,12 +85,20 @@ public class Customer {
         this.idCard = idCard;
     }
 
-    public int getNumberPhone() {
-        return numberPhone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setNumberPhone(int numberPhone) {
-        this.numberPhone = numberPhone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAddress() {
@@ -80,21 +107,5 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public CustomerType getCustomerType() {
-        return customerType;
-    }
-
-    public void setCustomerType(CustomerType customerType) {
-        this.customerType = customerType;
     }
 }

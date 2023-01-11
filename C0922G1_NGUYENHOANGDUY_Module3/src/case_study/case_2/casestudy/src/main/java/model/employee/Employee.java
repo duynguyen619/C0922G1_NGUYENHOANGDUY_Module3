@@ -1,23 +1,29 @@
 package model.employee;
 
 public class Employee {
-    private int id;
-    private String name;
-    private String dateOfBirth;
-    private String idCard;
-    private double salary;
-    private String phoneNumber;
-    private String email;
-    private String address;
-    private Position position;
-    private EducationDegree educationDegree;
-    private Division division ;
-    private User user;
+    int id;
+    String name;
+    String dateOfBirth;
+    String idCard;
+    Double salary;
+    String phoneNumber;
+    String email;
+    String address;
 
     public Employee() {
     }
 
-    public Employee(int id, String name, String dateOfBirth, String idCard, double salary, String phoneNumber, String email, String address, Position position, EducationDegree educationDegree, Division division, User user) {
+    public Employee(String name, String dateOfBirth, String idCard, Double salary, String phoneNumber, String email, String address) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.idCard = idCard;
+        this.salary = salary;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
+    public Employee(int id, String name, String dateOfBirth, String idCard, Double salary, String phoneNumber, String email, String address) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -26,10 +32,6 @@ public class Employee {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-        this.position = position;
-        this.educationDegree = educationDegree;
-        this.division = division;
-        this.user = user;
     }
 
     public int getId() {
@@ -64,11 +66,11 @@ public class Employee {
         this.idCard = idCard;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
@@ -94,37 +96,5 @@ public class Employee {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public EducationDegree getEducationDegree() {
-        return educationDegree;
-    }
-
-    public void setEducationDegree(EducationDegree educationDegree) {
-        this.educationDegree = educationDegree;
-    }
-
-    public Division getDivision() {
-        return division;
-    }
-
-    public void setDivision(Division division) {
-        this.division = division;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

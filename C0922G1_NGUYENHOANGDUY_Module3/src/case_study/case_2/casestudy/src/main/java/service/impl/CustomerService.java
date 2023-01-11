@@ -8,24 +8,29 @@ import service.ICustomer;
 import java.util.List;
 
 public class CustomerService implements ICustomer {
-    ICustomerRepositoty customerRepositoty = new CustomerRepository();
+    CustomerRepository customerRepository = new CustomerRepository();
     @Override
-    public List<Customer> selectAllCustomer() {
-        return customerRepositoty.selectAllCustomer();
+    public List<Customer> showList() {
+        return customerRepository.showList();
     }
 
     @Override
-    public Customer selectCustomerById(int id) {
-        return null;
+    public boolean update(Customer customer) {
+        return customerRepository.update(customer);
     }
 
     @Override
-    public boolean deleteCustomer() {
-        return false;
+    public boolean delete(int id) {
+        return customerRepository.delete(id);
     }
 
     @Override
-    public List<Customer> selectCustomerByEdition(String name, String address, String email) {
-        return null;
+    public boolean add(Customer customer) {
+        return customerRepository.add(customer);
+    }
+
+    @Override
+    public Customer findById(int id) {
+        return customerRepository.findById(id);
     }
 }

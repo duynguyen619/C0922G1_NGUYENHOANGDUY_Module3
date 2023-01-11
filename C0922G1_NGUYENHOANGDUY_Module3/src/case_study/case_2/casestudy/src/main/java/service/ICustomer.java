@@ -5,8 +5,9 @@ import model.customer.Customer;
 import java.util.List;
 
 public interface ICustomer {
-    List<Customer> selectAllCustomer();
-    Customer selectCustomerById(int id);
-    boolean deleteCustomer();
-    List<Customer> selectCustomerByEdition(String name,String address,String email);
+    public List<Customer> showList();
+    public boolean update(Customer customer);
+    public boolean delete(int id);
+    public boolean add(Customer customer);
+    public Customer findById(int id);
 }
