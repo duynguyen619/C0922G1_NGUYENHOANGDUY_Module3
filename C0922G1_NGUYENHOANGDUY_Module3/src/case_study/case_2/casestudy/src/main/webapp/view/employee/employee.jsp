@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: PC
@@ -35,8 +34,8 @@
 <body>
 <div class="row bg-light">
     <div class="col-2 " style="padding: 10px">
-        <a href="https://furamavietnam.com/"><img
-                src="https://cdn.nhanlucnganhluat.vn/uploads/images/051D288B/logo/2018-12/Logo-FURAMA-RESORT.jpg"
+        <a href="http://localhost:8080/"><img
+                src="img/logo.png"
                 height="100" width="100"/></a></div>
     <div class="col-3 box"><a
             href="https://www.tripadvisor.com/Hotel_Review-g298085-d302750-Reviews-Furama_Resort_Danang-Da_Nang.html">
